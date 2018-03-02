@@ -1,7 +1,7 @@
 # Fund Investor
 Aplikacja do wyliczania kwot dla funduszy inwestycyjnych.
 
-####Założenia
+#### Założenia
 Fundusz składa się z:
 - ID
     - Nazwy
