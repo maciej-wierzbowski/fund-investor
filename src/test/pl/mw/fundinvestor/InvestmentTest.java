@@ -23,6 +23,7 @@ class InvestmentTest {
             {2500, 25},
             {500, 5}
     };
+    static final double REST_1 = 0;
 
     static final double[][] RESULTS_2 = new double[][]{
             {1000, 10},
@@ -32,15 +33,17 @@ class InvestmentTest {
             {2500, 25},
             {500, 5}
     };
+    static final double REST_2 = 1;
 
     static final double[][] RESULTS_3 = new double[][]{
-            {668, 6.68},
+            {666, 6.66},
             {666, 6.66},
             {666, 6.66},
             {3750, 37.5},
             {3750, 37.5},
             {500, 5}
     };
+    static final double REST_3 = 2;
 
     private FundCollection fundCollection;
 
@@ -56,9 +59,10 @@ class InvestmentTest {
         int i = 0;
         for (Division division:divisionPlan.getList()) {
             assertEquals(RESULTS_1[i][0], division.getAmount());
-            assertEquals(RESULTS_1[i][1], division.getPercent());
+            assertEquals(RESULTS_1[i][1], round2DecimalPlaces(division.getPercent()));
             i++;
         }
+        assertEquals(REST_1, divisionPlan.getRest());
     }
 
     @Test
@@ -68,21 +72,27 @@ class InvestmentTest {
         int i = 0;
         for (Division division:divisionPlan.getList()) {
             assertEquals(RESULTS_2[i][0], division.getAmount());
-            assertEquals(RESULTS_2[i][0], division.getPercent());
+            assertEquals(RESULTS_2[i][1], round2DecimalPlaces(division.getPercent()));
             i++;
         }
+        assertEquals(REST_2, divisionPlan.getRest());
     }
 
     @Test
     void calculate3() {
         addFunds2();
-        DivisionPlan divisionPlan = Investment.calculate(fundCollection, AMOUNT_1, INVEST_STYLE_1);
+        DivisionPlan divisionPlan = Investment.calculate(fundCollection, AMOUNT_3, INVEST_STYLE_1);
         int i = 0;
         for (Division division:divisionPlan.getList()) {
             assertEquals(RESULTS_3[i][0], division.getAmount());
-            assertEquals(RESULTS_3[i][0], division.getPercent());
+            assertEquals(RESULTS_3[i][1], round2DecimalPlaces(division.getPercent()));
             i++;
         }
+        assertEquals(REST_3, divisionPlan.getRest());
+    }
+
+    private double round2DecimalPlaces(double d) {
+        return Math.floor(d * 100.0) / 100.0;
     }
 
     private void addFunds1() {
