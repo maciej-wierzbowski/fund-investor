@@ -14,3 +14,12 @@ Fundusz składa się z:
     - bezpieczny - 20% Polskie, 75% Zagraniczne, 5% Pieniężne
     - zrównoważony - 30% Polskie, 60% Zagraniczne, 10% Pieniężne
     - agresywny - 40% Polskie, 20% Zagraniczne, 40% Pieniężne
+
+#### Kompilacja
+```sh
+javac src\pl\mw\fundinvestor\*.java
+```
+#### Uruchomienie
+```sh
+java -cp src pl.mw.fundinvestor.Main
+```
