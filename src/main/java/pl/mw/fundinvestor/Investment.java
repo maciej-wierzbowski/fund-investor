@@ -1,8 +1,12 @@
 package pl.mw.fundinvestor;
 
+import java.security.InvalidParameterException;
+
 public class Investment {
 
     public static DivisionPlan calculate(FundCollection funds, double amount, InvestStyle investStyle) {
+
+        if(amount < 0 ) throw new InvalidParameterException();
 
         double percent1 = investStyle.getValue1() / funds.getCount(FundKind.POLISH) * 100;
         double percent2 = investStyle.getValue2() / funds.getCount(FundKind.FOREIGN) * 100;
