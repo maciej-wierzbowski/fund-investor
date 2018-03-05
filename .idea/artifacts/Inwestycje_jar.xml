@@ -6,8 +6,6 @@
         <element id="file-copy" path="$PROJECT_DIR$/target/META-INF/MANIFEST.MF" />
       </element>
       <element id="module-output" name="Inwestycje" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/junit-jupiter-api-5.0.0.jar" path-in-jar="/" />
-      <element id="extracted-dir" path="$PROJECT_DIR$/lib/opentest4j-1.0.0.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>
