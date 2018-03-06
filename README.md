@@ -23,3 +23,16 @@ javac src\pl\mw\fundinvestor\*.java
 ```sh
 java -cp src pl.mw.fundinvestor.Main
 ```
+
+#### IntelliJ
+1. Open Project.
+2.  Select folder 'fund-investor'.
+3. Click Import Changes.
+4. Menu Build -> Build project.
+
+- Run application:
+5. Select 'Inwestycje' configuration.
+6. Menu Run -> Run 'Inwestycje'.
+- Run tests:
+7. Select 'Test' configuration.
+8. Menu Run -> Run 'Test'.
